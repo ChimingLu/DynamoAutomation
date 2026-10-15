@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Zero-touch node library.
+    netstandard2.0 loads in every Dynamo for Revit host from 2.3 (Revit 2020, .NET Framework)
+    to 4.x (Revit 2027, .NET 10), and in Dynamo Sandbox / DynamoCLI.
+    No Revit references: the library only drives Revit from the outside. DynamoServices is
+    compile-time only (for the ArbitraryDimensionArrayImport attribute); every Dynamo host ships
+    its own copy, and it is not strong-named, so any version 2.3-4.x satisfies the reference.
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>DynamoAutomation</RootNamespace>
+    <AssemblyName>DynamoAutomation</AssemblyName>
+    <Version>2.0.0</Version>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <Nullable>disable</Nullable>
+    <Product>DynamoAutomation</Product>
+    <Description>Batch-run Dynamo graphs on many Revit models by driving Revit with journal files (Revit 2020-2027).</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DynamoVisualProgramming.DynamoServices" Version="2.14.0.4626" ExcludeAssets="runtime" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

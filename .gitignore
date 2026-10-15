@@ -328,3 +328,8 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# DynamoAutomation 2.x build output
+dist/
+src/**/bin/
+src/**/obj/
